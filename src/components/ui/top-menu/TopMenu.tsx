@@ -2,7 +2,7 @@ import { titleFont } from "@/config/fonts";
 import Link from "next/link";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 
-function TopMenu() {
+export function TopMenu() {
   return (
     <nav className="flex px-5 justify-between items-center w-full">
       <div>
@@ -54,5 +54,3 @@ function TopMenu() {
     </nav>
   );
 }
-
-export default TopMenu;

@@ -1,10 +1,13 @@
-import { titleFont } from "@/config/fonts";
+import { Title } from "@/components";
+import { initialData } from "@/seed/seed";
+
+const products = initialData.products;
 
 function HomePage() {
   return (
-    <div>
-      <h1 className={`${titleFont.className} font-bold `}>Ethan care verga</h1>
-    </div>
+    <>
+      <Title name="Tienda" className="mb-2" subtitle="Todos los productos" />
+    </>
   );
 }
 

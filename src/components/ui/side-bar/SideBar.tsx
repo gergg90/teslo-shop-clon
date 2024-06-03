@@ -1,6 +1,16 @@
 "use client";
 
-import { IoCloseOutline, IoSearchOutline } from "react-icons/io5";
+import Link from "next/link";
+import {
+  IoCloseOutline,
+  IoLogInOutline,
+  IoLogOutOutline,
+  IoPeopleOutline,
+  IoPersonAddOutline,
+  IoSearchOutline,
+  IoShirtOutline,
+  IoTicketOutline,
+} from "react-icons/io5";
 
 export function SideBar() {
   return (
@@ -27,6 +37,63 @@ export function SideBar() {
             className="w-full bg-gray-50 rounded pl-10 py-1 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-700"
           />
         </div>
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoPersonAddOutline size={30} />
+          <span className="ml-3 text-xl ">Perfil</span>
+        </Link>
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoTicketOutline size={30} />
+          <span className="ml-3 text-xl ">Ordenes</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoLogInOutline size={30} />
+          <span className="ml-3 text-xl ">Ingresar</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoLogOutOutline size={30} />
+          <span className="ml-3 text-xl ">Salir</span>
+        </Link>
+
+        <div className="w-full h-px bg-gray-200 my-10" />
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoShirtOutline size={30} />
+          <span className="ml-3 text-xl ">Productos</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoTicketOutline size={30} />
+          <span className="ml-3 text-xl ">Ordenes</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="flex items-center mt-10 p-2 hover:bg-gray-100 transition-all"
+        >
+          <IoPeopleOutline size={30} />
+          <span className="ml-3 text-xl ">Usuarios</span>
+        </Link>
       </nav>
     </div>
   );

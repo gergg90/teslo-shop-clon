@@ -40,6 +40,12 @@ export function TopMenu() {
         >
           Niños
         </Link>
+        <Link
+          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
+          href="/category/unisex"
+        >
+          Unisex
+        </Link>
       </div>
 
       <div className="flex items-center gap-1">

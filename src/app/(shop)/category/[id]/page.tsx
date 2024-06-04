@@ -1,10 +1,11 @@
 import { ProductGrid, Title } from "@/components";
+import { Category } from "@/interfaces";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
 interface Props {
   params: {
-    id: string;
+    id: Category;
   };
 }
 
@@ -13,27 +14,24 @@ const products = initialData.products;
 function CategoryPage({ params }: Props) {
   const { id } = params;
 
-  if (id !== "men" && id !== "women" && id !== "kid") return notFound();
+  if (id !== "men" && id !== "women" && id !== "kid" && id !== "unisex")
+    return notFound();
 
   const productsFilter = products.filter((product) => product.gender === id);
 
-  let titleCategory = "";
-  if (params.id === "men") {
-    titleCategory = "Hombres";
-  }
-  if (params.id === "women") {
-    titleCategory = "Damas";
-  }
-  if (params.id === "kid") {
-    titleCategory = "Niños";
-  }
+  const titleCategory: Record<Category, string> = {
+    men: "Hombres",
+    women: "Damas",
+    kid: "Niños",
+    unisex: "Unisex",
+  };
 
   return (
     <>
       <Title
-        name={titleCategory}
+        name={`Articulos para: ${titleCategory[id]}`}
         className="mb-2"
-        subtitle={`Todos los productos de la categoria ${titleCategory}`}
+        subtitle="Todos los articulos"
       />
       <ProductGrid products={productsFilter} />
     </>

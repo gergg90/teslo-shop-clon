@@ -1,3 +1,4 @@
+import { SizeSelector } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -27,15 +28,19 @@ function ProductPageSlug({ params }: Props) {
         <p className="text-lg mb-5">${product.price}</p>
 
         {/* Selector de tallas */}
+        <SizeSelector
+          selectedSize={product.sizes[0]}
+          availableSizes={product.sizes}
+        />
 
         {/* Selector de cantidad */}
-
-        {/* Button */}
-        <button className="btn-primary my-5">Agregar al carrito</button>
 
         {/* Descripcion */}
         <h3 className="font-bold text-sm">Descripcion:</h3>
         <p className="font-light">{product.description}</p>
+
+        {/* Button */}
+        <button className="btn-primary my-5">Agregar al carrito</button>
       </div>
     </div>
   );

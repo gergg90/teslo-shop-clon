@@ -1,7 +1,14 @@
 "use client";
-import Image from "next/image";
+import React, { useState } from "react";
 import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import Image from "next/image";
+import { Swiper as SwiperObject } from "swiper";
 
 interface Props {
   images: string[];
@@ -10,20 +17,34 @@ interface Props {
 }
 
 export function ProductSlideShow({ images, title, className }: Props) {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperObject>();
+
   return (
     <div className={className}>
       <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        style={
+          {
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          } as React.CSSProperties
+        }
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
       >
         {images.map((image) => (
-          <SwiperSlide key={title}>
-            <Image src={image} alt={title} width={200} height={200} />
+          <SwiperSlide key={image}>
+            <Image
+              alt={title}
+              src={`/products/${image}`}
+              width={1024}
+              height={800}
+              className="rounded-md object-fill"
+            />
           </SwiperSlide>
         ))}
-        ...
       </Swiper>
     </div>
   );

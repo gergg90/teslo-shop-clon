@@ -4,6 +4,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import "./slideshow.css";
+
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -31,11 +33,10 @@ export function ProductSlideShow({ images, title, className }: Props) {
         spaceBetween={10}
         navigation={true}
         autoplay={{
-          delay: 2000,
+          delay: 10000,
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-        className="mySwiper2"
       >
         {images.map((image) => (
           <SwiperSlide key={image}>

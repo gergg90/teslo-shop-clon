@@ -85,6 +85,7 @@ function CheckoutPage() {
             </div>
 
             <div className="mt-7 w-full">
+              {/* Disclaimer */}
               <p className="mb-5">
                 <span className="text-xs">
                   Al hacer click en{" "}

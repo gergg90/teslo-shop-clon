@@ -21,7 +21,7 @@ function ProductPageSlug({ params }: Props) {
   if (!product) return notFound();
 
   return (
-    <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div className="mt-5 mb-5 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* SlidesShow */}
       <div className="col-span-1 md:col-span-2">
         {/* Mobile Slideshow */}

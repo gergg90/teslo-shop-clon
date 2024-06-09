@@ -29,7 +29,7 @@ function CategoryPage({ params }: Props) {
   return (
     <>
       <Title
-        name={`Articulos para: ${titleCategory[id]}`}
+        title={`Articulos para: ${titleCategory[id]}`}
         className="mb-2"
         subtitle="Todos los articulos"
       />

@@ -1,12 +1,12 @@
 import { titleFont } from "@/config/fonts";
 
 interface Props {
-  name: string;
+  title: string;
   subtitle?: string;
   className?: string;
 }
 
-export function Title({ name, className, subtitle }: Props) {
+export function Title({ title: name, className, subtitle }: Props) {
   return (
     <div className={`mt-3 ${className}`}>
       <h1

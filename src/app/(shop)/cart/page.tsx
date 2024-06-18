@@ -7,9 +7,6 @@ const productInCart = [
   initialData.products[0],
   initialData.products[1],
   initialData.products[2],
-  initialData.products[4],
-  initialData.products[5],
-  initialData.products[6],
 ];
 
 function CartPage() {
